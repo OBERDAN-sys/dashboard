@@ -122,3 +122,12 @@ with c2x:
     vendas_pie.update_traces(hole=.5, hoverinfo="label")
     c2x.plotly_chart(vendas_pie)
 
+ 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
