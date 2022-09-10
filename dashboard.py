@@ -25,7 +25,6 @@ def get_image(path: str) -> Image:
 
 image = get_image("Varejo_2022.png")
 st.sidebar.image(image, use_column_width=True)
-st.sidebar.header("Filtre seus dados")
 
 
 # cache e widget arrasta e solta
@@ -34,9 +33,9 @@ def read_data(uploaded_file):
     return pd.read_csv(uploaded_file, encoding='ISO-8859-1', engine='python')
 
 
-datafile = st.sidebar.file_uploader("Baixe seu arquivo CSV", ["csv"])
+datafile = st.sidebar.file_uploader("Baixe seus dados csv e Analise", ["csv"])
 if datafile is None:
-    st.info("""Faça upload dos dados (.CSV) na barra lateral para começar.""")
+    st.info("""Baixe seus dados (.CSV) na barra lateral e inicie o Dashboard.""")
     st.stop()
 df_vendas = read_data(datafile).copy()
 
